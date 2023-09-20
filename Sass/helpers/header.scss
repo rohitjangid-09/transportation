@@ -1,0 +1,116 @@
+.header-all {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            img {
+                height: 70px;
+            }
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        .header-buttan {
+            a {
+                background-color: var(--brand-primary);
+                padding: 17px;
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--white);
+            }
+        }
+
+
+        .menu>ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            >li {
+                padding: 24px 0;
+
+                >a {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: var(--white);
+                    padding: 0px 20px;
+                    transition: 0.5s all ease;
+
+
+                    &:hover {
+                        color: var(--brand-primary);
+                    }
+
+
+                }
+
+
+
+            }
+
+
+        }
+    }
+
+    .menu>ul>li>ul {
+        position: absolute;
+        left: 0;
+        top: 63px;
+        background-color: var(--white);
+        width: 250px;
+        flex-direction: column;
+        visibility: hidden;
+        border-radius: 5px;
+        border-top: 4px solid var(--brand-primary);
+        border-bottom: 4px solid var(--brand-primary);
+        opacity: 0;
+        transform: translateY(12%);
+        transition: transform .4s, opacity .1s;
+        z-index: 9999;
+    }
+
+    .menu ul li:hover ul {
+        visibility: visible;
+        opacity: 1;
+        transform: rotateX(0);
+    }
+
+    .menu>ul>li {
+        position: relative;
+    }
+
+    .menu>ul>li>ul>li>a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border);
+        font-size: 16px;
+        text-align: left;
+        color: var(--black);
+    }
+
+    .menu ul li ul li a:hover {
+        /* background: #FF4E3C; */
+        border-color: var(--brand-primary);
+        color: var(--brand-primary);
+
+    }
+
+    .menu ul li:hover ul {
+        display: block;
+    }
+}
+
+.fixed-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 1.7);
+
+}
